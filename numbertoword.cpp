@@ -65,7 +65,9 @@ string num_to_word(string num) {
 
     //looping through the split string backwards and adding the suffix if needed
     for (int i = split_num.size() - 1; i >= 0; i--) {
-        final_string += get_3num_to_str(split_num[i]) + power_of_tens_list[i + 1] + " ";
+        if(stoi(split_num[i])> 0) {
+            final_string += get_3num_to_str(split_num[i]) + power_of_tens_list[i + 1] + " ";
+        }
     }
 
     return final_string;
